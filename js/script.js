@@ -173,7 +173,7 @@ function makeEducation(){
     let form = document.createElement('form')
     form.innerHTML += '<input class="form-control" type="text" placeholder="Degree">'
     form.innerHTML += '<input class="form-control" type="text" placeholder="School">'
-    form.innerHTML += '<textarea  oninput="bulletTextArea(event)" rows="10" style="word-wrap:break-word;" class="form-control" placeholder="Project description"></textarea>'
+    form.innerHTML += '<textarea  oninput="bulletTextArea(event)" rows="10" style="word-wrap:break-word;" class="form-control" placeholder="Description"></textarea>'
     form.innerHTML += '<input class="form-control" type="text" placeholder="Date from-To  ex: Oct 2010 - Jan 2015">'
     form.innerHTML += '<input type="submit" id="submit" class="btn btn-info">'
     ev.target.parentElement.parentElement.append(form)
@@ -256,7 +256,7 @@ function makeExperience(){
     let form = document.createElement('form')
     form.innerHTML += '<input class="form-control" type="text" placeholder="Title">'
     form.innerHTML += '<input class="form-control" type="text" placeholder="Company">'
-    form.innerHTML += '<textarea  oninput="bulletTextArea(event)" rows="10" style="word-wrap:break-word;" class="form-control" placeholder="Project description"></textarea>'
+    form.innerHTML += '<textarea  oninput="bulletTextArea(event)" rows="10" style="word-wrap:break-word;" class="form-control" placeholder="Description"></textarea>'
     form.innerHTML += '<input class="form-control" type="text" placeholder="Date from-To  ex: Oct 2010 - present">'
     form.innerHTML += '<input type="submit" id="submit" class="btn btn-info">'
     ev.target.parentElement.parentElement.append(form)
@@ -508,7 +508,7 @@ function makeCert(){
     let form = document.createElement('form')
     form.innerHTML += '<input class="form-control" type="text" placeholder="Name">'
     form.innerHTML += '<input class="form-control" type="text" placeholder="Oraganization">'
-    form.innerHTML += '<textarea  oninput="bulletTextArea(event)" rows="10" style="word-wrap:break-word;" class="form-control" placeholder="description"></textarea>'
+    form.innerHTML += '<textarea  oninput="bulletTextArea(event)" rows="10" style="word-wrap:break-word;" class="form-control" placeholder="Description"></textarea>'
     form.innerHTML += '<input class="form-control" type="text" placeholder="Link">'
     form.innerHTML += '<input class="form-control" type="text" placeholder="Date ex: 2020 or Sep 2022">'
     form.innerHTML += '<input type="submit" id="submit" class="btn btn-info">'
@@ -606,7 +606,7 @@ function makeVolunt(){
     let form = document.createElement('form')
     form.innerHTML += '<input class="form-control" type="text" placeholder="Position">'
     form.innerHTML += '<input class="form-control" type="text" placeholder="Oraganization">'
-    form.innerHTML += '<textarea  oninput="bulletTextArea(event)" rows="10" style="word-wrap:break-word;" class="form-control" placeholder="Project description"></textarea>'
+    form.innerHTML += '<textarea  oninput="bulletTextArea(event)" rows="10" style="word-wrap:break-word;" class="form-control" placeholder="Description"></textarea>'
     form.innerHTML += '<input class="form-control" type="text" placeholder="Link">'
     form.innerHTML += '<input class="form-control" type="text" placeholder="Date">'
     form.innerHTML += '<input type="submit" id="submit" class="btn btn-info">'

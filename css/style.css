@@ -14,13 +14,7 @@ body{
   min-height: 11.7in;
 }
 
-.test{
-  width: 300px;
-  height: 300px;
-  background-color: aqua;
-  /* font-family: sans-serif; */
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-}
+
 
 #button{
   display: block;
@@ -57,9 +51,6 @@ margin: auto;
 color: white;
 }
 
-/* .tips{
-  display: block;
-} */
 
 ul{
   list-style-position: inside;
@@ -115,8 +106,6 @@ ul{
   for(let i=0 ;i<pre.length;i++){
     pre[i].style = 'overflow:hidden;white-space: pre-wrap;margin:0px 0px  3px 10px; font-family:"Calibri",sans-serif; font-size: 1rem;'
   }
-
-
 
 */
 
