@@ -20,7 +20,7 @@ This is web application to create a resume easily by filling forms and preview t
 ### Screenshots
 
 ### Live Preview
-Feel free to visit [Resume Creator website](https://thisismylivewebsitedemo.on.drv.tw/Easy_Resume_Creator/) , try it and send me feedback. 
+Feel free to visit [Resume Creator website](https://thisismylivewebsitedemo.on.drv.tw/resume_creator/) , try it and send me feedback. 
 
 ### Future work
 - Make the application more interactive with the user.
