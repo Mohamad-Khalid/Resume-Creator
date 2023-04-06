@@ -683,7 +683,6 @@ function stylLinks(){
   document.querySelector('#button').onclick = 
   function(){
     let links = document.querySelectorAll('#prev a')
-    console.log(links)
     for(let i=0 ; i<links.length;i++){
       links[i].style = 'color:#007bff; margin: 0px 5px 0px 5px; '
     }
@@ -695,7 +694,6 @@ function clickToEdit(){
   document.getElementById('prev').onclick =
 function(event){
   deletePreviousInfo()
-  console.log(event.target)
   let element = event.target
   let text = event.target.textContent
   let form = document.createElement('form')
@@ -736,10 +734,10 @@ clickToEdit()
 //---------- generate pdf---------
 
 //by window
-var button = document.getElementById("button");
-    var makepdf = document.getElementById("#prev");
+let button = document.getElementById("button");
+    let makepdf = document.getElementById("prev");
     button.addEventListener("click", function () {
-        var mywindow = window.open("","","width=900,height=900");
+        let mywindow = window.open("","PRINT","width=900,height=900");
         mywindow.document.write(prev.innerHTML);
         mywindow.document.close();
         mywindow.focus();
