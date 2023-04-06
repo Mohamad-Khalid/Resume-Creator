@@ -22,6 +22,9 @@ This is web application to create a resume easily by filling forms and preview t
 
 https://user-images.githubusercontent.com/61889578/230498211-1f729212-d171-4260-982e-d833ea314b9d.mp4
 
+#### This is an example 
+![example](https://user-images.githubusercontent.com/61889578/230504183-5ebff639-1244-4a88-a631-dfac715c959d.jpg)
+
 
 ### Live Preview
 Feel free to visit [Resume Creator website](https://thisismylivewebsitedemo.on.drv.tw/resume_creator/) , try it and send me feedback. 
