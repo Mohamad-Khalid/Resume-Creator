@@ -35,7 +35,35 @@ body{
   justify-content: space-between;
   align-items: flex-start;
   align-content: flex-start;
+  margin-bottom: 20px;
 }
+
+.old-order{
+  margin-top: 10px;
+  background-color: bisque;
+  border-radius: 10px;
+  text-align: center;
+}
+.new-order{
+  background-color: rgb(239, 187, 18);
+  border-radius: 10px;
+  margin-top: 10px;
+  text-align: center;
+
+}
+
+.btn-ord{
+  display: block;
+  width: 120px;
+  height: 60px;
+  margin: auto;
+  margin-bottom: 5px;
+}
+
+.apply-order{
+  margin-top: 20px;
+}
+
 
 .info{
 display: block;
@@ -97,6 +125,10 @@ ul{
 .cont-with{
   font-size: 30px;
 }
+
+
+
+
 
 
 /*

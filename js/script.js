@@ -37,7 +37,12 @@ function deletePreviousInfo(){
   for (f of forms){
     f.remove()
   }
+
+  document.querySelector('.order-area').textContent=''
+
 }
+
+
 
 function setSectionHead(sectionId , Name){
   document.querySelector(`#${sectionId} hr`).style 
@@ -62,7 +67,7 @@ function makeHeader(){
       form.innerHTML += '<input class="form-control" type="text" name="" id="c4" placeholder="GitHub link">'
       form.innerHTML += '<input class="form-control" type="text" name="" id="c5" placeholder="Portfolio link">'
       form.innerHTML += '<input type="submit" id="submit" class="btn btn-info">'
-      ev.target.parentElement.parentElement.append(form)
+      document.getElementById('show-form').append(form)
       putHeaderInfo()
   }
 }
@@ -127,7 +132,7 @@ function makeSummary(){
     let form = document.createElement('form')
     form.innerHTML += '<textarea style="word-wrap:break-word;" class="form-control" type="text" name="" id="" placeholder="Suummary" rows="10"></textarea>'
     form.innerHTML += '<input type="submit" id="submit" class="btn btn-info">'
-    ev.target.parentElement.parentElement.append(form)
+    document.getElementById('show-form').append(form)
     putSummary()
   }
 }
@@ -176,7 +181,7 @@ function makeEducation(){
     form.innerHTML += '<textarea  oninput="bulletTextArea(event)" rows="10" style="word-wrap:break-word;" class="form-control" placeholder="Description"></textarea>'
     form.innerHTML += '<input class="form-control" type="text" placeholder="Date from-To  ex: Oct 2010 - Jan 2015">'
     form.innerHTML += '<input type="submit" id="submit" class="btn btn-info">'
-    ev.target.parentElement.parentElement.append(form)
+    document.getElementById('show-form').append(form)
     putEducation()
   }
 }
@@ -259,7 +264,7 @@ function makeExperience(){
     form.innerHTML += '<textarea  oninput="bulletTextArea(event)" rows="10" style="word-wrap:break-word;" class="form-control" placeholder="Description"></textarea>'
     form.innerHTML += '<input class="form-control" type="text" placeholder="Date from-To  ex: Oct 2010 - present">'
     form.innerHTML += '<input type="submit" id="submit" class="btn btn-info">'
-    ev.target.parentElement.parentElement.append(form)
+    document.getElementById('show-form').append(form)
     putExperience()
   }
 }
@@ -334,7 +339,7 @@ function makeSkills(){
     form.innerHTML += '<input class="form-control" type="text" placeholder="Categpry ex: Frameworks">'
     form.innerHTML += '<input class="form-control" type="text" placeholder="Skills ex: Spring , React">'
     form.innerHTML += '<input type="submit" id="submit" class="btn btn-info">'
-    ev.target.parentElement.parentElement.append(form)
+    document.getElementById('show-form').append(form)
     putSkills()
   }
 }
@@ -418,7 +423,7 @@ function makeProject(){
     // bug here : input overflow in text area
     form.innerHTML += '<textarea  oninput="bulletTextArea(event)" rows="10" style="word-wrap:break-word;" class="form-control" placeholder="Project description"></textarea>'
     form.innerHTML += '<input type="submit" id="submit" class="btn btn-info">'
-    ev.target.parentElement.parentElement.append(form)
+    document.getElementById('show-form').append(form)
     addProject()
   }
 }
@@ -512,7 +517,7 @@ function makeCert(){
     form.innerHTML += '<input class="form-control" type="text" placeholder="Link">'
     form.innerHTML += '<input class="form-control" type="text" placeholder="Date ex: 2020 or Sep 2022">'
     form.innerHTML += '<input type="submit" id="submit" class="btn btn-info">'
-    ev.target.parentElement.parentElement.append(form)
+    document.getElementById('show-form').append(form)
     putCert()
   }
 }
@@ -610,7 +615,7 @@ function makeVolunt(){
     form.innerHTML += '<input class="form-control" type="text" placeholder="Link">'
     form.innerHTML += '<input class="form-control" type="text" placeholder="Date">'
     form.innerHTML += '<input type="submit" id="submit" class="btn btn-info">'
-    ev.target.parentElement.parentElement.append(form)
+    document.getElementById('show-form').append(form)
     putVolunt()
   }
 }
@@ -634,7 +639,6 @@ function putVolunt(){
         if(voluntData[i].value.length > 0){
           let voluntLink = document.createElement('a')
           voluntLink.setAttribute('href',voluntData[i].value)
-          //voluntLink.setAttribute('style','color:#007bff')
           voluntLink.textContent = document.querySelector('.volunt-div-all:last-of-type .volunt-div1 .volunt-title').textContent
           document.querySelector('.volunt-div-all:last-of-type .volunt-div1 .volunt-title').textContent=''
           document.querySelector('.volunt-div-all:last-of-type .volunt-div1 .volunt-title').append(voluntLink) 
@@ -692,18 +696,22 @@ function stylLinks(){
 
 function clickToEdit(){
   document.getElementById('prev').onclick =
-function(event){
-  deletePreviousInfo()
-  let element = event.target
-  let text = event.target.textContent
-  let form = document.createElement('form')
-    // if text make text | if textarea make textarea < to edit >
-    form.innerHTML += '<input class="form-control" type="text" placeholder="Edit Here">'
-    form.innerHTML += '<input type="submit" id="submit" class="btn btn-info">'
-    document.getElementById('left-side').append(form)
-    document.querySelector('.form-control').value = text
-    editText(element)
-}
+  function(event){
+    deletePreviousInfo()
+    let element = event.target
+    let text = event.target.textContent
+    let form = document.createElement('form')
+      if(element.tagName == 'PRE'){
+        form.innerHTML += '<textarea  oninput="bulletTextArea(event)" rows="10" style="word-wrap:break-word;" class="form-control" placeholder="Description"></textarea>'
+      }
+      else{
+        form.innerHTML += '<input class="form-control" type="text" placeholder="Edit Here">'
+      }
+      form.innerHTML += '<input type="submit" id="submit" class="btn btn-info">'
+      document.getElementById('left-side').append(form)
+      document.querySelector('.form-control').value = text
+      editText(element)
+  }
 }
 
 function editText(element){
@@ -714,8 +722,85 @@ function editText(element){
   }
 }
 
+function preventPageReload(){
+  const onConfirmRefresh = function (event) {
+    event.preventDefault()
+    return event.returnValue = "Are you sure you want to leave the page?"
+  }
+  window.addEventListener("beforeunload", onConfirmRefresh, { capture: true })
+}
 
 
+
+
+
+function orderSections(){
+  document.getElementById('order-sections').onclick = 
+  function(ev){
+
+    deletePreviousInfo()
+
+    let New = document.createElement('div')
+    New.setAttribute('class','new-order col-sm-6')
+    New.innerHTML ='<p>New Order</p>'
+
+
+    let Old = document.createElement('div')
+    Old.setAttribute('class','old-order col-sm-6')
+    Old.innerHTML ='<p>Current Order</p>'
+
+    let butDiv = document.createElement('div')
+    butDiv.setAttribute('class','col-sm-12')
+    butDiv.style = 'text-align: center;'
+    butDiv.innerHTML =' <button class="btn btn-dark apply-order" id="ap-ord">Apply new order</button>'
+
+    document.querySelector('.order-area').append(New)
+    document.querySelector('.order-area').append(Old)
+    document.querySelector('.order-area').append(butDiv)
+  
+
+    let sections = document.getElementById('prev').children
+    for(let i=1; i<sections.length; i++){
+      let name = sections[i].id
+      let btn = document.createElement('button')
+      btn.setAttribute('class','btn btn-dark btn-ord')
+      btn.textContent = name
+      document.querySelector('.old-order').append(btn)
+    }
+
+    moveSection()
+  }
+  
+}
+
+function moveSection(){
+  let newOrder = document.querySelector('.new-order')
+  document.querySelector('.old-order').onclick = 
+  function(ev){
+    if( ev.target.tagName =='BUTTON'){
+      newOrder.append(ev.target)
+    }
+    applyNewOrder()
+  }
+}
+
+function applyNewOrder(){
+  document.getElementById('ap-ord').onclick = 
+  function(){
+    let arr =[]
+    console.log(arr)
+
+    let divs = document.querySelector('.new-order').children
+
+    for(let i=1;i<divs.length;i++){
+      let section = document.getElementById(divs[i].textContent)
+      arr.push(section)                        
+    }
+    for(let j=0; j<arr.length; j++){
+      document.getElementById('prev').append(arr[j])
+    }
+  }
+}
 
 // functioins call
 makeHeader()
@@ -728,7 +813,8 @@ makeCert()
 makeVolunt()
 stylLinks()
 clickToEdit()
-
+orderSections()
+preventPageReload()
 
 
 //---------- generate pdf---------
@@ -771,22 +857,11 @@ let button = document.getElementById("button");
 
 //------------------Remember-----------------------------------
 
-// header name : amrgign bottom               done
-// mobile : onclick open mobile               done
-// add portfolio                              done
-// header sections hr : make it bigger        done
-// skills : margin categry , 
-// links style : color ,                      done
-// certificate name | org 
-// volunteering description : bullet
-// description of all : bullet
-// prevent refresh,back,forward
-// date input : date not text
-
 //-----------
+// date input : date not text
 // page break preview
 // save on info to file 
 // can edit                                   done 
-// can order sections
+// can order sections                         done
 
 
