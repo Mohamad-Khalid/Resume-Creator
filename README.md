@@ -32,7 +32,7 @@ Feel free to visit [Resume Creator website](https://thisismylivewebsitedemo.on.d
 ### Updates
 - Update #1
   - Reorder the sections as you want.
-  - Edit anything you entered , >just click on it. 
+  - Edit anything you entered , just click on it. 
   - Prevnt page reload while typing or editing.
 ### Future work
 - Make the application more interactive with the user.
