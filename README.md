@@ -34,6 +34,7 @@ Feel free to visit [Resume Creator website](https://thisismylivewebsitedemo.on.d
   - Reorder the sections as you want.
   - Edit anything you entered , just click on it. 
   - Prevnt page reload while typing or editing.
+  - Fixed preview and download on mobile issue.
 ### Future work
 - Make the application more interactive with the user.
 - Working on server side.
