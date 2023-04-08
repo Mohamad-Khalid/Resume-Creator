@@ -684,13 +684,10 @@ function styleVolunt(){
 }
 
 function stylLinks(){
-  document.querySelector('#button').onclick = 
-  function(){
     let links = document.querySelectorAll('#prev a')
     for(let i=0 ; i<links.length;i++){
       links[i].style = 'color:#007bff; margin: 0px 5px 0px 5px; '
     }
-  }
 }
 
 
@@ -698,6 +695,7 @@ function clickToEdit(){
   document.getElementById('prev').onclick =
   function(event){
     deletePreviousInfo()
+   
     let element = event.target
     let text = event.target.textContent
     let form = document.createElement('form')
@@ -811,27 +809,56 @@ makeSkills()
 makeProject()
 makeCert()
 makeVolunt()
-stylLinks()
+//stylLinks()
 clickToEdit()
 orderSections()
 preventPageReload()
 
 
+
+
 //---------- generate pdf---------
 
-//by window
-let button = document.getElementById("button");
-    let makepdf = document.getElementById("prev");
-    button.addEventListener("click", function () {
-        let mywindow = window.open("","PRINT","width=900,height=900");
-        mywindow.document.write(prev.innerHTML);
-        mywindow.document.close();
-        mywindow.focus();
-        mywindow.print();
-        mywindow.close();
+document.getElementById('button').onclick =
+function (){
+  stylLinks()
+  print()
+}
+
+
+function print () {
+  var printDiv = document.getElementById("prev");
+  var printWindow = window.open('', '', 'left=0, top=0, width=800, height=500, toolbar=0, scrollbars=0, status=0');  printWindow.document.write(printDiv.innerHTML);
+  printWindow.document.close();
+  printWindow.focus();
+  printWindow.print();
   
-        return true;
-    });
+ }
+
+
+
+
+
+//by window  |mobile problems
+// let button = document.getElementById("button");
+//     let makepdf = document.getElementById("prev");
+//     button.addEventListener("click", function () {
+//         let mywindow = window.open("","PRINT","width=900,height=900");
+//         mywindow.document.write(prev.innerHTML);
+//         mywindow.document.close();
+//         mywindow.focus();
+//         mywindow.print();
+//         mywindow.close();
+  
+//         return true;
+//     });
+
+
+
+
+
+
+
 
 
 
