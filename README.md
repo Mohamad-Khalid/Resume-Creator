@@ -27,14 +27,16 @@ https://user-images.githubusercontent.com/61889578/230498211-1f729212-d171-4260-
 
 
 ### Live Preview
-Feel free to visit [Resume Creator website](https://thisismylivewebsitedemo.on.drv.tw/Resume_Creator/) , try it and send me feedback. 
+Feel free to visit [Resume Creator website](https://thisismylivewebsitedemo.on.drv.tw/resumecreator/) , try it and send me feedback. 
 
 ### Updates
 - Update #1
   - Reorder the sections as you want.
   - Edit anything you entered , just click on it. 
-  - Prevnt page reload while typing or editing.
+  - Prevent page reload while typing or editing.
   - Fixed preview and download on mobile issue.
+  - Improved user interface.
+  
 ### Future work
 - Make the application more interactive with the user.
 - Working on server side.
