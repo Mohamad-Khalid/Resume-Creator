@@ -66,7 +66,7 @@ function makeHeader(){
       form.innerHTML += '<input class="form-control" type="text" name="" id="c3" placeholder="Linkedin link">'
       form.innerHTML += '<input class="form-control" type="text" name="" id="c4" placeholder="GitHub link">'
       form.innerHTML += '<input class="form-control" type="text" name="" id="c5" placeholder="Portfolio link">'
-      form.innerHTML += '<input type="submit" id="submit" class="btn btn-info">'
+      form.innerHTML += '<input type="submit" id="submit" class="btn btn-info btn-block">'
       document.getElementById('show-form').append(form)
       putHeaderInfo()
   }
@@ -131,7 +131,7 @@ function makeSummary(){
     deletePreviousInfo()
     let form = document.createElement('form')
     form.innerHTML += '<textarea style="word-wrap:break-word;" class="form-control" type="text" name="" id="" placeholder="Suummary" rows="10"></textarea>'
-    form.innerHTML += '<input type="submit" id="submit" class="btn btn-info">'
+    form.innerHTML += '<input type="submit" id="submit" class="btn btn-info btn-block">'
     document.getElementById('show-form').append(form)
     putSummary()
   }
@@ -180,7 +180,7 @@ function makeEducation(){
     form.innerHTML += '<input class="form-control" type="text" placeholder="School">'
     form.innerHTML += '<textarea  oninput="bulletTextArea(event)" rows="10" style="word-wrap:break-word;" class="form-control" placeholder="Description"></textarea>'
     form.innerHTML += '<input class="form-control" type="text" placeholder="Date from-To  ex: Oct 2010 - Jan 2015">'
-    form.innerHTML += '<input type="submit" id="submit" class="btn btn-info">'
+    form.innerHTML += '<input type="submit" id="submit" class="btn btn-info btn-block">'
     document.getElementById('show-form').append(form)
     putEducation()
   }
@@ -263,7 +263,7 @@ function makeExperience(){
     form.innerHTML += '<input class="form-control" type="text" placeholder="Company">'
     form.innerHTML += '<textarea  oninput="bulletTextArea(event)" rows="10" style="word-wrap:break-word;" class="form-control" placeholder="Description"></textarea>'
     form.innerHTML += '<input class="form-control" type="text" placeholder="Date from-To  ex: Oct 2010 - present">'
-    form.innerHTML += '<input type="submit" id="submit" class="btn btn-info">'
+    form.innerHTML += '<input type="submit" id="submit" class="btn btn-info btn-block">'
     document.getElementById('show-form').append(form)
     putExperience()
   }
@@ -338,7 +338,7 @@ function makeSkills(){
     let form = document.createElement('form')
     form.innerHTML += '<input class="form-control" type="text" placeholder="Categpry ex: Frameworks">'
     form.innerHTML += '<input class="form-control" type="text" placeholder="Skills ex: Spring , React">'
-    form.innerHTML += '<input type="submit" id="submit" class="btn btn-info">'
+    form.innerHTML += '<input type="submit" id="submit" class="btn btn-info btn-block">'
     document.getElementById('show-form').append(form)
     putSkills()
   }
@@ -422,7 +422,7 @@ function makeProject(){
     form.innerHTML += '<input class="form-control" type="text" placeholder="Live Demo Link">'
     // bug here : input overflow in text area
     form.innerHTML += '<textarea  oninput="bulletTextArea(event)" rows="10" style="word-wrap:break-word;" class="form-control" placeholder="Project description"></textarea>'
-    form.innerHTML += '<input type="submit" id="submit" class="btn btn-info">'
+    form.innerHTML += '<input type="submit" id="submit" class="btn btn-info btn-block">'
     document.getElementById('show-form').append(form)
     addProject()
   }
@@ -516,7 +516,7 @@ function makeCert(){
     form.innerHTML += '<textarea  oninput="bulletTextArea(event)" rows="10" style="word-wrap:break-word;" class="form-control" placeholder="Description"></textarea>'
     form.innerHTML += '<input class="form-control" type="text" placeholder="Link">'
     form.innerHTML += '<input class="form-control" type="text" placeholder="Date ex: 2020 or Sep 2022">'
-    form.innerHTML += '<input type="submit" id="submit" class="btn btn-info">'
+    form.innerHTML += '<input type="submit" id="submit" class="btn btn-info btn-block">'
     document.getElementById('show-form').append(form)
     putCert()
   }
@@ -614,7 +614,7 @@ function makeVolunt(){
     form.innerHTML += '<textarea  oninput="bulletTextArea(event)" rows="10" style="word-wrap:break-word;" class="form-control" placeholder="Description"></textarea>'
     form.innerHTML += '<input class="form-control" type="text" placeholder="Link">'
     form.innerHTML += '<input class="form-control" type="text" placeholder="Date">'
-    form.innerHTML += '<input type="submit" id="submit" class="btn btn-info">'
+    form.innerHTML += '<input type="submit" id="submit" class="btn btn-info btn-block">'
     document.getElementById('show-form').append(form)
     putVolunt()
   }
@@ -698,17 +698,20 @@ function clickToEdit(){
    
     let element = event.target
     let text = event.target.textContent
-    let form = document.createElement('form')
+    if(element.tagName!='DIV'){
+      let form = document.createElement('form')
       if(element.tagName == 'PRE'){
         form.innerHTML += '<textarea  oninput="bulletTextArea(event)" rows="10" style="word-wrap:break-word;" class="form-control" placeholder="Description"></textarea>'
       }
       else{
         form.innerHTML += '<input class="form-control" type="text" placeholder="Edit Here">'
       }
-      form.innerHTML += '<input type="submit" id="submit" class="btn btn-info">'
+      form.innerHTML += '<input type="submit" id="submit" class="btn btn-info btn-block">'
       document.getElementById('left-side').append(form)
       document.querySelector('.form-control').value = text
       editText(element)
+    }
+    
   }
 }
 
@@ -739,18 +742,21 @@ function orderSections(){
     deletePreviousInfo()
 
     let New = document.createElement('div')
-    New.setAttribute('class','new-order col-sm-6')
+    New.setAttribute('class','new-order col-xs-6')
     New.innerHTML ='<p>New Order</p>'
+    New.style = 'padding:0 5px;width:50%'
 
 
     let Old = document.createElement('div')
-    Old.setAttribute('class','old-order col-sm-6')
+    Old.setAttribute('class','old-order col-xs-6')
     Old.innerHTML ='<p>Current Order</p>'
+    Old.style = 'padding:0 5px; width:50%'
+
 
     let butDiv = document.createElement('div')
-    butDiv.setAttribute('class','col-sm-12')
+    butDiv.setAttribute('class','col-xs-12')
     butDiv.style = 'text-align: center;'
-    butDiv.innerHTML =' <button class="btn btn-dark apply-order" id="ap-ord">Apply new order</button>'
+    butDiv.innerHTML =' <button style="height:50px;width:100%" class="btn btn-dark  apply-order" id="ap-ord">Apply new order</button>'
 
     document.querySelector('.order-area').append(New)
     document.querySelector('.order-area').append(Old)
@@ -762,6 +768,7 @@ function orderSections(){
       let name = sections[i].id
       let btn = document.createElement('button')
       btn.setAttribute('class','btn btn-dark btn-ord')
+      //btn.style = 'margin: 5px'
       btn.textContent = name
       document.querySelector('.old-order').append(btn)
     }
@@ -809,7 +816,6 @@ makeSkills()
 makeProject()
 makeCert()
 makeVolunt()
-//stylLinks()
 clickToEdit()
 orderSections()
 preventPageReload()
@@ -828,7 +834,7 @@ function (){
 
 function print () {
   var printDiv = document.getElementById("prev");
-  var printWindow = window.open('', '', 'left=0, top=0, width=800, height=500, toolbar=0, scrollbars=0, status=0');  printWindow.document.write(printDiv.innerHTML);
+  var printWindow = window.open('', '', 'left=0, top=0, width=900, height=900, toolbar=0, scrollbars=0, status=0');  printWindow.document.write(printDiv.innerHTML);
   printWindow.document.close();
   printWindow.focus();
   printWindow.print();

@@ -14,12 +14,27 @@
 
 <body>
 
+  <nav class="navbar navbar-expand-lg bg-dark navbar-dark ">
+    <a href="index.html" class="navbar-brand"> Resume Creator</a>
+    <button class="navbar-toggler" data-target="#nvb" data-toggle="collapse">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="nvb">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">About</a></li>
+      </ul>
+    </div>
+  </nav>
+
+
+  <div class="row info">
+    <h1>Welcome To Resume Creator</h1>
+    <br>
+    <p>Easily, create your resume </p>
+  </div>
 
   <div class="container">
-    <div class="row info">
-      <h1>Welcome To Resume Creator</h1>
-      <p>Easily, create your resume </p>
-    </div>
 
     <div class="row">
       <div class="col-sm-12 tips">
@@ -37,14 +52,16 @@
           <li>You can customize PDF output properties such as margin and scale.</li>
           <li>You can use the website on different devices</li>
           <li>This version is version 1.0 , so I will be happy to share with me your feedback.</li>
-          <br><br>
-          <p class="cont-with">Contact with me</p>
-          <div class="conts">
-            <a href="mailto:mohamad.khalid2021@gmail.com"> <i class="fa-solid fa-envelope email"></i> </a>
-            <a href="https://www.linkedin.com/in/muhamad-khalid/" target="_blank"> <i class="fa-brands fa-linkedin linked"></i> </a>
-            <a href="https://github.com/Mohamad-Khalid" target="_blank"> <i class="fa-brands fa-github github"></i> </a>
-          </div>
         </ul>
+        <p class="cont-with">Contact with me</p>
+          <div class="conts">
+            <!-- <i class="fa-solid fa-envelope email"></i>
+            <i class="fa-brands fa-linkedin linked"></i>
+            <i class="fa-brands fa-github github"></i> -->
+            <a href="mailto:mohamad.khalid2021@gmail.com"> <img src="photos/social/gmail.png" alt="" class="email"> </a>
+            <a href="https://www.linkedin.com/in/muhamad-khalid/" target="_blank"> <img src="photos/social/linkedin.png" alt="" class="linked"> </a>
+            <a href="https://github.com/Mohamad-Khalid" target="_blank"> <img src="photos/social/github.png" alt="" class="github"> </a>
+          </div>
       </div>
     </div>
   </div>
@@ -54,7 +71,7 @@
     <div class="row">
       <div class="col-md-4"></div>
       <div class="col-md-8">
-        <button class="btn btn-warning" id="button">Preview and Download pdf</button>
+        <button class="btn btn-warning btn-lg" id="button">Preview and Download pdf</button>
       </div>
     </div>
   </div>
@@ -78,14 +95,13 @@
 
         <div id="show-form"></div>
 
-       <div class="row order-area">
-          
-        </div>
-       
+        <div class="row order-area">
         
-
+        </div>
+      
       </div>
 
+      
 
       <div id="prev" class="col-sm-12 col-md-8">
         <!-- Resume sections here-->

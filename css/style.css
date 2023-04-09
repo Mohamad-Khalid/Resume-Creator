@@ -8,11 +8,15 @@ body{
 }
 
 
+
+
 #prev{
   background-color: white;
   width: 8.27in;
   min-height: 11.7in;
 }
+
+
 
 
 
@@ -52,6 +56,12 @@ body{
 
 }
 
+.order-area{
+  display: flex;
+  justify-content: center;
+  
+}
+
 .btn-ord{
   display: block;
   width: 120px;
@@ -68,11 +78,18 @@ body{
 .info{
 display: block;
 text-align: center;
-padding: 20px 0;
-margin-bottom: 50px;
+padding: 100px 30px;
+margin: 0 0px 50px 0;
 background-color: rgb(41 132 184) ;
-border-radius: 50px;
 }
+
+@media all and (max-width: 992px) {
+  #prev{
+    zoom: 0.7;
+    -moz-transform: scale(0.7);
+  }
+}
+  
 
 .info h1, .info p{
 margin: auto;
@@ -85,59 +102,28 @@ ul{
 }
 
 
-.conts{
-  height: 100px;
-  line-height: 100px;
-}
 
 .email , .linked , .github{
-  line-height: 100px;
   height: 40px;
   font-size: 80px;
+  margin: 10px;
 }
 
 .email{
-  margin-right: 40px;
-}
-.linked{
-  margin-right: 40px;
+  height: 50px;
 }
 
 .conts a{
-  color: inherit;
   text-decoration: none;
 }
 
 
-.linked:hover{
-  color: #0072b1;
-}
-
-.github:hover{
-  color: rgb(37, 131, 203);
-  
-}
-
-.email:hover{
-  color: goldenrod;
-}
 
 .cont-with{
   font-size: 30px;
 }
 
-
-
-
-
-
-/*
-
- form.innerHTML += '<textarea  oninput="bulletTextArea(event)" rows="10" style="word-wrap:break-word;" class="form-control" placeholder="Project description"></textarea>'
- let pre = document.querySelectorAll('#projects pre')
-  for(let i=0 ;i<pre.length;i++){
-    pre[i].style = 'overflow:hidden;white-space: pre-wrap;margin:0px 0px  3px 10px; font-family:"Calibri",sans-serif; font-size: 1rem;'
-  }
-
-*/
-
+#left-side{
+  margin-bottom: 10px;
+  
+}
