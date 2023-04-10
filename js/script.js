@@ -66,8 +66,21 @@ function makeHeader(){
       form.innerHTML += '<input class="form-control" type="text" name="" id="c3" placeholder="Linkedin link">'
       form.innerHTML += '<input class="form-control" type="text" name="" id="c4" placeholder="GitHub link">'
       form.innerHTML += '<input class="form-control" type="text" name="" id="c5" placeholder="Portfolio link">'
-      form.innerHTML += '<input type="submit" id="submit" class="btn btn-info btn-block">'
+      form.innerHTML += '<input type="submit" id="submit" class="btn btn-info btn-block">' 
       document.getElementById('show-form').append(form)
+
+      // put past data in form if found
+      let headerInfo = document.getElementById('header').children
+      let formFeilds = form.children
+      if(headerInfo[0].children[0].textContent.length>0){
+        formFeilds[0].value = headerInfo[0].children[0].textContent
+      }
+      for (let i=0 ; i< headerInfo[1].children.length;i++){
+        if(headerInfo[1].children[i].textContent.length>0){
+          formFeilds[i+1].value = headerInfo[1].children[i].textContent
+        }
+      }
+
       putHeaderInfo()
   }
 }
@@ -130,7 +143,7 @@ function makeSummary(){
   function (ev){
     deletePreviousInfo()
     let form = document.createElement('form')
-    form.innerHTML += '<textarea style="word-wrap:break-word;" class="form-control" type="text" name="" id="" placeholder="Suummary" rows="10"></textarea>'
+    form.innerHTML += '<textarea style="word-wrap:break-word;" class="form-control" type="text" name="" id="" placeholder="Suummary" rows="7"></textarea>'
     form.innerHTML += '<input type="submit" id="submit" class="btn btn-info btn-block">'
     document.getElementById('show-form').append(form)
     putSummary()
@@ -178,7 +191,7 @@ function makeEducation(){
     let form = document.createElement('form')
     form.innerHTML += '<input class="form-control" type="text" placeholder="Degree">'
     form.innerHTML += '<input class="form-control" type="text" placeholder="School">'
-    form.innerHTML += '<textarea  oninput="bulletTextArea(event)" rows="10" style="word-wrap:break-word;" class="form-control" placeholder="Description"></textarea>'
+    form.innerHTML += '<textarea  oninput="bulletTextArea(event)" rows="7" style="word-wrap:break-word;" class="form-control" placeholder="Description"></textarea>'
     form.innerHTML += '<input class="form-control" type="text" placeholder="Date from-To  ex: Oct 2010 - Jan 2015">'
     form.innerHTML += '<input type="submit" id="submit" class="btn btn-info btn-block">'
     document.getElementById('show-form').append(form)
@@ -261,7 +274,7 @@ function makeExperience(){
     let form = document.createElement('form')
     form.innerHTML += '<input class="form-control" type="text" placeholder="Title">'
     form.innerHTML += '<input class="form-control" type="text" placeholder="Company">'
-    form.innerHTML += '<textarea  oninput="bulletTextArea(event)" rows="10" style="word-wrap:break-word;" class="form-control" placeholder="Description"></textarea>'
+    form.innerHTML += '<textarea  oninput="bulletTextArea(event)" rows="7" style="word-wrap:break-word;" class="form-control" placeholder="Description"></textarea>'
     form.innerHTML += '<input class="form-control" type="text" placeholder="Date from-To  ex: Oct 2010 - present">'
     form.innerHTML += '<input type="submit" id="submit" class="btn btn-info btn-block">'
     document.getElementById('show-form').append(form)
@@ -421,7 +434,7 @@ function makeProject(){
     form.innerHTML += '<input class="form-control" type="text" placeholder="GitHub Link">'
     form.innerHTML += '<input class="form-control" type="text" placeholder="Live Demo Link">'
     // bug here : input overflow in text area
-    form.innerHTML += '<textarea  oninput="bulletTextArea(event)" rows="10" style="word-wrap:break-word;" class="form-control" placeholder="Project description"></textarea>'
+    form.innerHTML += '<textarea  oninput="bulletTextArea(event)" rows="7" style="word-wrap:break-word;" class="form-control" placeholder="Project description"></textarea>'
     form.innerHTML += '<input type="submit" id="submit" class="btn btn-info btn-block">'
     document.getElementById('show-form').append(form)
     addProject()
@@ -513,7 +526,7 @@ function makeCert(){
     let form = document.createElement('form')
     form.innerHTML += '<input class="form-control" type="text" placeholder="Name">'
     form.innerHTML += '<input class="form-control" type="text" placeholder="Oraganization">'
-    form.innerHTML += '<textarea  oninput="bulletTextArea(event)" rows="10" style="word-wrap:break-word;" class="form-control" placeholder="Description"></textarea>'
+    form.innerHTML += '<textarea  oninput="bulletTextArea(event)" rows="7" style="word-wrap:break-word;" class="form-control" placeholder="Description"></textarea>'
     form.innerHTML += '<input class="form-control" type="text" placeholder="Link">'
     form.innerHTML += '<input class="form-control" type="text" placeholder="Date ex: 2020 or Sep 2022">'
     form.innerHTML += '<input type="submit" id="submit" class="btn btn-info btn-block">'
@@ -611,7 +624,7 @@ function makeVolunt(){
     let form = document.createElement('form')
     form.innerHTML += '<input class="form-control" type="text" placeholder="Position">'
     form.innerHTML += '<input class="form-control" type="text" placeholder="Oraganization">'
-    form.innerHTML += '<textarea  oninput="bulletTextArea(event)" rows="10" style="word-wrap:break-word;" class="form-control" placeholder="Description"></textarea>'
+    form.innerHTML += '<textarea  oninput="bulletTextArea(event)" rows="7" style="word-wrap:break-word;" class="form-control" placeholder="Description"></textarea>'
     form.innerHTML += '<input class="form-control" type="text" placeholder="Link">'
     form.innerHTML += '<input class="form-control" type="text" placeholder="Date">'
     form.innerHTML += '<input type="submit" id="submit" class="btn btn-info btn-block">'
@@ -701,7 +714,7 @@ function clickToEdit(){
     if(element.tagName!='DIV'){
       let form = document.createElement('form')
       if(element.tagName == 'PRE'){
-        form.innerHTML += '<textarea  oninput="bulletTextArea(event)" rows="10" style="word-wrap:break-word;" class="form-control" placeholder="Description"></textarea>'
+        form.innerHTML += '<textarea  oninput="bulletTextArea(event)" rows="7" style="word-wrap:break-word;" class="form-control" placeholder="Description"></textarea>'
       }
       else{
         form.innerHTML += '<input class="form-control" type="text" placeholder="Edit Here">'
