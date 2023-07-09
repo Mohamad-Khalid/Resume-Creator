@@ -14,32 +14,33 @@
 
 
 //----- Common Data ------------------------
+'use strict'
 let buttons = document.querySelectorAll('.section')
 let hrs = document.querySelectorAll('hr')
 let ps = document.querySelectorAll('p')
-let allSectionNames = document.querySelectorAll('h3')
+let allSectionNames = document.querySelectorAll('h2')
 let cvSections = document.querySelectorAll('.cv-section')
+const fontSans = 'font-family:"Calibri",sans-serif'
 
 for(let i=0; i<ps.length ;i++){
   ps[i].style = "margin:0"
 }
+
 
 for(let i=0; i<hrs.length; i++){
   hrs[i].style = "display:none"
 }
 
 for(let i=0 ; i<allSectionNames.length; i++){
-  allSectionNames[i].style = "margin:0 ; padding:0"
+  allSectionNames[i].style = "margin: 5px 0 2px 0 ; padding:0"
 }
 
 function deletePreviousInfo(){
   let forms = document.querySelectorAll('form')
-  for (f of forms){
+  for (let f of forms){
     f.remove()
   }
-
   document.querySelector('.order-area').textContent=''
-
 }
 
 
@@ -47,7 +48,7 @@ function deletePreviousInfo(){
 function setSectionHead(sectionId , Name){
   document.querySelector(`#${sectionId} hr`).style 
   = 'display:block ; margin:0; border: 1px solid'
-  let sectionName = document.querySelector(`#${sectionId} h3`)
+  let sectionName = document.querySelector(`#${sectionId} h2`)
   sectionName.textContent = Name;
 }
 
@@ -163,7 +164,7 @@ function putSummary(){
 }
 
 function styleSummary(){
-  document.querySelector('#summary').style ='font-family:"Calibri",sans-serif;margin-bottom:5px;'
+  document.querySelector('#summary').style =`margin-bottom:5px;`
 }
 
 
@@ -175,12 +176,13 @@ function makeEducation(){
     deletePreviousInfo()
     // add div in edu section
     let divToAll = document.createElement('div')
-    divToAll.setAttribute('class','div-all')
+    divToAll.setAttribute('class','edu-div-all')
     let div1 = document.createElement('div')
     div1.setAttribute('class','edu-div1')
     let div2 = document.createElement('div')
     div2.setAttribute('class','edu-div2')
 
+    // look 
     div1.innerHTML += '<p class="edu-degree"></p>'
     div1.innerHTML += '<p class="edu-school"></p>'
     div1.innerHTML += '<pre class="edu-description"></pre>'
@@ -207,7 +209,7 @@ function putEducation(){
      setSectionHead('education','Education')
 
      let eduData = document.querySelectorAll('.form-control') // 4
-     let eduDiv = document.querySelector('#education .div-all:last-of-type').children //2
+     let eduDiv = document.querySelector('#education .edu-div-all:last-of-type').children //2
      
      for(let i=0; i<eduData.length; i++){
       if(i==0 || i==1 || i==2){
@@ -222,8 +224,9 @@ function putEducation(){
  }
 
 function styleEducation(){
- document.querySelector('#education').style = 'font-family:"Calibri",sans-serif;margin-bottom:5px;'
- let divAll = document.querySelectorAll('.div-all')
+ //document.querySelector('#education').style.font = fontSans
+ document.querySelector('#education').style = `font-family:"Calibri", sans-serif;margin-bottom:5px;`
+ let divAll = document.querySelectorAll('.edu-div-all')
  for(let i=0; i<divAll.length; i++){
   divAll[i].style = "display:flex ;flex-wrap:wrap ; justify-content:space-between;margin-bottom:3px;"
  }
@@ -240,14 +243,14 @@ function styleEducation(){
 
  let div1 = document.querySelectorAll('.edu-div1')  
  for(let i=0 ;i<div1.length;i++){
-  div1[i].style = "width:75%"
+  div1[i].style = "width:80%"
  }
  
  let deg = document.querySelectorAll('.edu-degree')
  for(let i=0 ;i<deg.length;i++){
    deg[i].style = "font-weight:bold; margin:0"
  }
- let div2 = document.querySelector('.edu-div2') 
+ 
 }
 
 
@@ -806,7 +809,7 @@ function applyNewOrder(){
   document.getElementById('ap-ord').onclick = 
   function(){
     let arr =[]
-    console.log(arr)
+   
 
     let divs = document.querySelector('.new-order').children
 

@@ -1,39 +1,30 @@
-
-*{
+* {
   padding: 0;
   margin: 0;
 }
-body{
+body {
   background-color: gainsboro;
 }
 
-
-
-
-#prev{
+#prev {
   background-color: white;
   width: 8.27in;
   min-height: 11.7in;
+  /* scale: .7; */
 }
 
-
-
-
-
-#button{
+#button {
   display: block;
   margin: auto;
   margin-top: 20px;
   margin-bottom: 20px;
-
 }
 
-.section{
+.section {
   margin-bottom: 20px;
 }
 
-
-.buttons{
+.buttons {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -42,27 +33,25 @@ body{
   margin-bottom: 20px;
 }
 
-.old-order{
+.old-order {
   margin-top: 10px;
   background-color: bisque;
   border-radius: 10px;
   text-align: center;
 }
-.new-order{
+.new-order {
   background-color: rgb(239, 187, 18);
   border-radius: 10px;
   margin-top: 10px;
   text-align: center;
-
 }
 
-.order-area{
+.order-area {
   display: flex;
   justify-content: center;
-  
 }
 
-.btn-ord{
+.btn-ord {
   display: block;
   width: 120px;
   height: 60px;
@@ -70,63 +59,58 @@ body{
   margin-bottom: 5px;
 }
 
-.apply-order{
+.apply-order {
   margin-top: 20px;
 }
 
-
-.info{
-display: block;
-text-align: center;
-padding: 100px 30px;
-margin: 0 0px 50px 0;
-/* background-color: rgb(41 132 184) ; */
-/* background: linear-gradient(45deg,#fdd650,#ef770f); */
-/* background: linear-gradient(45deg,#26e8dd,#269ae8); */
-background: linear-gradient(45deg,#269ae8,#26e8dd);
+.info {
+  display: block;
+  text-align: center;
+  padding: 100px 30px;
+  margin: 0 0px 50px 0;
+  background-color: rgb(38, 139, 198);
+  /* background: linear-gradient(45deg,#fdd650,#ef770f); */
+  /* background: linear-gradient(45deg,#26e8dd,#269ae8); */
+  /* background: linear-gradient(45deg,#269ae8,#26e8dd); */
 }
 
 @media all and (max-width: 992px) {
-  #prev{
+  #prev {
     zoom: 0.7;
     -moz-transform: scale(0.7);
   }
 }
-  
 
-.info h1, .info p{
-margin: auto;
-color: white;
+.info h1,
+.info p {
+  margin: auto;
+  color: white;
 }
 
-
-ul{
+ul {
   list-style-position: inside;
 }
 
-
-
-.email , .linked , .github{
+.email,
+.linked,
+.github {
   height: 40px;
   font-size: 80px;
   margin: 10px;
 }
 
-.email{
+.email {
   height: 50px;
 }
 
-.conts a{
+.conts a {
   text-decoration: none;
 }
 
-
-
-.cont-with{
+.cont-with {
   font-size: 30px;
 }
 
-#left-side{
+#left-side {
   margin-bottom: 10px;
-  
 }
